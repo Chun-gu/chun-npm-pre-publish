@@ -1,9 +1,9 @@
-name: Deploy to NPM
+name: CI
 
 on:
   push:
     branches:
-      - "!main"
+      - "**"
 
 jobs:
   build:
