@@ -14,7 +14,7 @@
   },
   "scripts": {
     "build": "tsc && tsup",
-    "version": "changeset version",
+    "ver": "changeset version",
     "release": "pnpm build && changeset publish"
   },
   "keywords": [
