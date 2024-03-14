@@ -7,7 +7,7 @@
   "homepage": "https://github.com/Chun-gu/chun-npm-pre-publish",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Chun-gu/chun-npm-pre-publish.git"
+    "url": "git+https://github.com/Chun-gu/chun-npm-pre-publish.git"
   },
   "bugs": {
     "url": "https://github.com/Chun-gu/chun-npm-pre-publish/issues"
