@@ -1,0 +1,29 @@
+{
+  "name": "chun-npm-pre-publish",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "homepage": "https://github.com/Chun-gu/chun-npm-pre-publish",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chun-gu/chun-npm-pre-publish.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chun-gu/chun-npm-pre-publish/issues"
+  },
+  "scripts": {
+    "build": "tsc && tsup"
+  },
+  "keywords": [
+    "test",
+    "pre-publish"
+  ],
+  "author": "Chun-gu",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.27",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}
