@@ -13,7 +13,9 @@
     "url": "https://github.com/Chun-gu/chun-npm-pre-publish/issues"
   },
   "scripts": {
-    "build": "tsc && tsup"
+    "build": "tsc && tsup",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
   },
   "keywords": [
     "test",
@@ -22,6 +24,7 @@
   "author": "Chun-gu",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.11.27",
     "tsup": "^8.0.2",
     "typescript": "^5.4.2"
