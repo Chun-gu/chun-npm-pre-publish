@@ -1,5 +1,11 @@
 # chun-npm-pre-publish
 
+## 0.1.2
+
+### Patch Changes
+
+- 38b6ec9: dododododo
+
 ## 0.1.1
 
 ### Patch Changes
