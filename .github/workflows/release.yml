@@ -8,6 +8,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     name: Release
@@ -27,7 +31,7 @@ jobs:
         with:
           node-version: 20
           cache: "pnpm"
-          registry-url: "https://registry.npmjs.org"
+          registry-url: https://registry.npmjs.org
 
       - name: Get pnpm store directory
         shell: bash
@@ -43,22 +47,13 @@ jobs:
           restore-keys: ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install
-
-      - name: Create .npmrc file
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            email=username@registry-email.com
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: pnpm release
+          publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
